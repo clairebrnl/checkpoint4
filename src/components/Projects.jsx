@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ProjectCards from "./ProjectCards";
 import axios from "axios";
+import Frameworks from "./Frameworks";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -23,18 +24,32 @@ const Projects = () => {
 
   return (
     <div>
-      <div onChange={onChangeValue}>
-        <input type="radio" value="React" name="framework" />
-        <input type="radio" value="Express" name="framework" />
-        <input type="radio" value="Node" name="framework" />
-      </div>
+      <Search>
+        <div onChange={onChangeValue}>
+          <input type="search" name="framework" />
+          <FrameworkContainer>
+            <Frameworks />
+          </FrameworkContainer>
+        </div>
+      </Search>
       {projects
         .filter((project) => project.framework_name.includes(sortedProjects))
         .map((project) => (
-          <ProjectCards project={project} key={project.name} />
+          <ProjectCards project={project} key={project.project_name} />
         ))}
     </div>
   );
 };
+
+const FrameworkContainer = styled.div`
+  width: 100%;
+`;
+
+const Search = styled.div`
+  margin: 26px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export default Projects;

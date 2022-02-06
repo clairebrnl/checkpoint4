@@ -3,28 +3,31 @@ import styled from "styled-components";
 
 const ProjectCards = ({ project }) => (
   <ProjectContainer>
-    <Content>
-      <Timeline>
-        <ContentLeft>
-          <h1>{project.project_name}</h1>
-          <p>{project.description}</p>
-        </ContentLeft>
-        <ImageContainer>
-          <img src={project.image} alt="project-logo" />
-        </ImageContainer>
-      </Timeline>
-    </Content>
+    <h1>{project.project_name}</h1>
+    <p>{project.description}</p>
+    <ProjectImage>
+      <img src={project.image} alt="project-logo" />
+    </ProjectImage>
   </ProjectContainer>
 );
 
-const ContentLeft = styled.div``;
+const ProjectContainer = styled.div`
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 
-const Timeline = styled.div``;
+  img {
+    height: 20px;
+    width: 40px;
+  }
+`;
 
-const Content = styled.div``;
-
-const ProjectContainer = styled.div``;
-
-const ImageContainer = styled.div``;
+const ProjectImage = styled.div`
+  height: 20px;
+  width: 40px;
+`;
 
 export default ProjectCards;

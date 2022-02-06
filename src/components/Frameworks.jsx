@@ -15,12 +15,10 @@ const Frameworks = () => {
       .catch((err) => console.log(err));
   }, []);
 
-console.log(frameworks)
-
   return (
     <div>
       {frameworks.map((framework) => (
-        <FrameworksCards framework={framework} key={framework.name}/>
+        <FrameworksCards framework={framework} key={framework.framework_name}/>
       ))}
     </div>
   );

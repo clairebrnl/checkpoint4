@@ -1,13 +1,16 @@
 import React from "react";
+import styled from "styled-components";
 
 const FrameworksCards = ({ framework }) => (
-    <li className="card">
-      <div className="framework-container">
-        <ul>
-          <h1>{framework.name}</h1>
-        </ul>
-      </div>
-    </li>
-  );
+  <FrameworkContainer>
+    <p>{framework.framework_name}</p>
+  </FrameworkContainer>
+);
+
+const FrameworkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+`;
 
 export default FrameworksCards;

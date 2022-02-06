@@ -1,11 +1,16 @@
 import React from "react";
-import { Nav } from "./NavStyle";
+import { Link } from "react-router-dom";
+import { Nav, NavContainer } from "./NavStyle";
 
 const Navbar = () => {
   return (
     <>
       <Nav>
-          <h1>Hello World</h1>
+        <NavContainer>
+          <Link to="/">
+            <h1>Checkpoint</h1>
+          </Link>
+        </NavContainer>
       </Nav>
     </>
   );
